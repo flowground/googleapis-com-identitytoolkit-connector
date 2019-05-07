@@ -1,0 +1,98 @@
+{
+    "type": "object",
+    "properties": {
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json"
+            ],
+            "default": "json"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Request of getting a code for user confirmation (reset password, change email etc.)",
+            "properties": {
+                "androidInstallApp": {
+                    "description": "whether or not to install the android app on the device where the link is opened",
+                    "type": "boolean"
+                },
+                "androidMinimumVersion": {
+                    "description": "minimum version of the app. if the version on the device is lower than this version then the user is taken to the play store to upgrade the app",
+                    "type": "string"
+                },
+                "androidPackageName": {
+                    "description": "android package name of the android app to handle the action code",
+                    "type": "string"
+                },
+                "canHandleCodeInApp": {
+                    "description": "whether or not the app can handle the oob code without first going to web",
+                    "type": "boolean"
+                },
+                "captchaResp": {
+                    "description": "The recaptcha response from the user.",
+                    "type": "string"
+                },
+                "challenge": {
+                    "description": "The recaptcha challenge presented to the user.",
+                    "type": "string"
+                },
+                "continueUrl": {
+                    "description": "The url to continue to the Gitkit app",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "The email of the user.",
+                    "type": "string"
+                },
+                "iOSAppStoreId": {
+                    "description": "iOS app store id to download the app if it's not already installed",
+                    "type": "string"
+                },
+                "iOSBundleId": {
+                    "description": "the iOS bundle id of iOS app to handle the action code",
+                    "type": "string"
+                },
+                "idToken": {
+                    "description": "The user's Gitkit login token for email change.",
+                    "type": "string"
+                },
+                "kind": {
+                    "default": "identitytoolkit#relyingparty",
+                    "description": "The fixed string \"identitytoolkit#relyingparty\".",
+                    "type": "string"
+                },
+                "newEmail": {
+                    "description": "The new email if the code is for email change.",
+                    "type": "string"
+                },
+                "requestType": {
+                    "description": "The request type.",
+                    "type": "string"
+                },
+                "userIp": {
+                    "description": "The IP address of the user.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

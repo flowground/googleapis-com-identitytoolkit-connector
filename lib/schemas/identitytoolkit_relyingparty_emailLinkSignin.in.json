@@ -1,0 +1,49 @@
+{
+    "type": "object",
+    "properties": {
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json"
+            ],
+            "default": "json"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Request to sign in with email.",
+            "properties": {
+                "email": {
+                    "description": "The email address of the user.",
+                    "type": "string"
+                },
+                "idToken": {
+                    "description": "Token for linking flow.",
+                    "type": "string"
+                },
+                "oobCode": {
+                    "description": "The confirmation code.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

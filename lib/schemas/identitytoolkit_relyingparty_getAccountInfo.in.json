@@ -1,0 +1,67 @@
+{
+    "type": "object",
+    "properties": {
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json"
+            ],
+            "default": "json"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Request to get the account information.",
+            "properties": {
+                "delegatedProjectNumber": {
+                    "description": "GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "The list of emails of the users to inquiry.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "idToken": {
+                    "description": "The GITKit token of the authenticated user.",
+                    "type": "string"
+                },
+                "localId": {
+                    "description": "The list of local ID's of the users to inquiry.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "phoneNumber": {
+                    "description": "Privileged caller can query users by specified phone number.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

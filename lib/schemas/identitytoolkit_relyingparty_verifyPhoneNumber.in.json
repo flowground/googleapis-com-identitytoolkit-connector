@@ -1,0 +1,59 @@
+{
+    "type": "object",
+    "properties": {
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json"
+            ],
+            "default": "json"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Request for Identitytoolkit-VerifyPhoneNumber",
+            "properties": {
+                "code": {
+                    "type": "string"
+                },
+                "idToken": {
+                    "type": "string"
+                },
+                "operation": {
+                    "type": "string"
+                },
+                "phoneNumber": {
+                    "type": "string"
+                },
+                "sessionInfo": {
+                    "description": "The session info previously returned by IdentityToolkit-SendVerificationCode.",
+                    "type": "string"
+                },
+                "temporaryProof": {
+                    "type": "string"
+                },
+                "verificationProof": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

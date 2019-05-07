@@ -1,0 +1,390 @@
+{
+    "title": "Google Identity Toolkit",
+    "description": "Help the third party sites to implement federated login.",
+    "docsUrl": "https://developers.google.com/identity-toolkit/v3/",
+    "url": "https://api.apis.guru/v2/specs/googleapis.com/identitytoolkit/v3/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://www.googleapis.com/identitytoolkit/v3/relyingparty",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Oauth2": {
+                "label": "Oauth 2.0 authentication",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "identitytoolkit_relyingparty_createAuthUri": {
+            "main": "./lib/actions/identitytoolkit_relyingparty_createAuthUri.js",
+            "title": "Creates the URI used by the IdP to authenticate the user.",
+            "description": "Creates the URI used by the IdP to authenticate the user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/identitytoolkit_relyingparty_createAuthUri.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "identitytoolkit_relyingparty_deleteAccount": {
+            "main": "./lib/actions/identitytoolkit_relyingparty_deleteAccount.js",
+            "title": "Delete user account.",
+            "description": "Delete user account.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/identitytoolkit_relyingparty_deleteAccount.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "identitytoolkit_relyingparty_downloadAccount": {
+            "main": "./lib/actions/identitytoolkit_relyingparty_downloadAccount.js",
+            "title": "Batch download user accounts.",
+            "description": "Batch download user accounts.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/identitytoolkit_relyingparty_downloadAccount.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "identitytoolkit_relyingparty_emailLinkSignin": {
+            "main": "./lib/actions/identitytoolkit_relyingparty_emailLinkSignin.js",
+            "title": "Reset password for a user.",
+            "description": "Reset password for a user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/identitytoolkit_relyingparty_emailLinkSignin.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "identitytoolkit_relyingparty_getAccountInfo": {
+            "main": "./lib/actions/identitytoolkit_relyingparty_getAccountInfo.js",
+            "title": "Returns the account info.",
+            "description": "Returns the account info.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/identitytoolkit_relyingparty_getAccountInfo.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "identitytoolkit_relyingparty_getOobConfirmationCode": {
+            "main": "./lib/actions/identitytoolkit_relyingparty_getOobConfirmationCode.js",
+            "title": "Get a code for user action confirmation.",
+            "description": "Get a code for user action confirmation.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/identitytoolkit_relyingparty_getOobConfirmationCode.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "identitytoolkit_relyingparty_getProjectConfig": {
+            "main": "./lib/actions/identitytoolkit_relyingparty_getProjectConfig.js",
+            "title": "Get project configuration.",
+            "description": "Get project configuration.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/identitytoolkit_relyingparty_getProjectConfig.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "identitytoolkit_relyingparty_getRecaptchaParam": {
+            "main": "./lib/actions/identitytoolkit_relyingparty_getRecaptchaParam.js",
+            "title": "Get recaptcha secure param.",
+            "description": "Get recaptcha secure param.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/identitytoolkit_relyingparty_getRecaptchaParam.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "identitytoolkit_relyingparty_getPublicKeys": {
+            "main": "./lib/actions/identitytoolkit_relyingparty_getPublicKeys.js",
+            "title": "Get token signing public key.",
+            "description": "Get token signing public key.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/identitytoolkit_relyingparty_getPublicKeys.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "identitytoolkit_relyingparty_resetPassword": {
+            "main": "./lib/actions/identitytoolkit_relyingparty_resetPassword.js",
+            "title": "Reset password for a user.",
+            "description": "Reset password for a user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/identitytoolkit_relyingparty_resetPassword.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "identitytoolkit_relyingparty_sendVerificationCode": {
+            "main": "./lib/actions/identitytoolkit_relyingparty_sendVerificationCode.js",
+            "title": "Send SMS verification code.",
+            "description": "Send SMS verification code.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/identitytoolkit_relyingparty_sendVerificationCode.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "identitytoolkit_relyingparty_setAccountInfo": {
+            "main": "./lib/actions/identitytoolkit_relyingparty_setAccountInfo.js",
+            "title": "Set account info for a user.",
+            "description": "Set account info for a user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/identitytoolkit_relyingparty_setAccountInfo.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "identitytoolkit_relyingparty_setProjectConfig": {
+            "main": "./lib/actions/identitytoolkit_relyingparty_setProjectConfig.js",
+            "title": "Set project configuration.",
+            "description": "Set project configuration.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/identitytoolkit_relyingparty_setProjectConfig.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "identitytoolkit_relyingparty_signOutUser": {
+            "main": "./lib/actions/identitytoolkit_relyingparty_signOutUser.js",
+            "title": "Sign out user.",
+            "description": "Sign out user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/identitytoolkit_relyingparty_signOutUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "identitytoolkit_relyingparty_signupNewUser": {
+            "main": "./lib/actions/identitytoolkit_relyingparty_signupNewUser.js",
+            "title": "Signup new user.",
+            "description": "Signup new user.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/identitytoolkit_relyingparty_signupNewUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "identitytoolkit_relyingparty_uploadAccount": {
+            "main": "./lib/actions/identitytoolkit_relyingparty_uploadAccount.js",
+            "title": "Batch upload existing user accounts.",
+            "description": "Batch upload existing user accounts.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/identitytoolkit_relyingparty_uploadAccount.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "identitytoolkit_relyingparty_verifyAssertion": {
+            "main": "./lib/actions/identitytoolkit_relyingparty_verifyAssertion.js",
+            "title": "Verifies the assertion returned by the IdP.",
+            "description": "Verifies the assertion returned by the IdP.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/identitytoolkit_relyingparty_verifyAssertion.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "identitytoolkit_relyingparty_verifyCustomToken": {
+            "main": "./lib/actions/identitytoolkit_relyingparty_verifyCustomToken.js",
+            "title": "Verifies the developer asserted ID token.",
+            "description": "Verifies the developer asserted ID token.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/identitytoolkit_relyingparty_verifyCustomToken.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "identitytoolkit_relyingparty_verifyPassword": {
+            "main": "./lib/actions/identitytoolkit_relyingparty_verifyPassword.js",
+            "title": "Verifies the user entered password.",
+            "description": "Verifies the user entered password.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/identitytoolkit_relyingparty_verifyPassword.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "identitytoolkit_relyingparty_verifyPhoneNumber": {
+            "main": "./lib/actions/identitytoolkit_relyingparty_verifyPhoneNumber.js",
+            "title": "Verifies ownership of a phone number and creates/updates the user account accordingly.",
+            "description": "Verifies ownership of a phone number and creates/updates the user account accordingly.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/identitytoolkit_relyingparty_verifyPhoneNumber.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

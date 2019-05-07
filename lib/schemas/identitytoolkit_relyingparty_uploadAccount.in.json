@@ -1,0 +1,225 @@
+{
+    "type": "object",
+    "properties": {
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json"
+            ],
+            "default": "json"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Request to upload user account in batch.",
+            "properties": {
+                "allowOverwrite": {
+                    "description": "Whether allow overwrite existing account when user local_id exists.",
+                    "type": "boolean"
+                },
+                "blockSize": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "cpuMemCost": {
+                    "description": "The following 4 fields are for standard scrypt algorithm.",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "delegatedProjectNumber": {
+                    "description": "GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "dkLen": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "hashAlgorithm": {
+                    "description": "The password hash algorithm.",
+                    "type": "string"
+                },
+                "memoryCost": {
+                    "description": "Memory cost for hash calculation. Used by scrypt similar algorithms.",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "parallelization": {
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "rounds": {
+                    "description": "Rounds for hash calculation. Used by scrypt and similar algorithms.",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "saltSeparator": {
+                    "description": "The salt separator.",
+                    "format": "byte",
+                    "type": "string"
+                },
+                "sanityCheck": {
+                    "description": "If true, backend will do sanity check(including duplicate email and federated id) when uploading account.",
+                    "type": "boolean"
+                },
+                "signerKey": {
+                    "description": "The key for to hash the password.",
+                    "format": "byte",
+                    "type": "string"
+                },
+                "targetProjectId": {
+                    "description": "Specify which project (field value is actually project id) to operate. Only used when provided credential.",
+                    "type": "string"
+                },
+                "users": {
+                    "description": "The account info to be stored.",
+                    "items": {
+                        "description": "Template for an individual account info.",
+                        "properties": {
+                            "createdAt": {
+                                "description": "User creation timestamp.",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "customAttributes": {
+                                "description": "The custom attributes to be set in the user's id token.",
+                                "type": "string"
+                            },
+                            "customAuth": {
+                                "description": "Whether the user is authenticated by the developer.",
+                                "type": "boolean"
+                            },
+                            "disabled": {
+                                "description": "Whether the user is disabled.",
+                                "type": "boolean"
+                            },
+                            "displayName": {
+                                "description": "The name of the user.",
+                                "type": "string"
+                            },
+                            "email": {
+                                "description": "The email of the user.",
+                                "type": "string"
+                            },
+                            "emailVerified": {
+                                "description": "Whether the email has been verified.",
+                                "type": "boolean"
+                            },
+                            "lastLoginAt": {
+                                "description": "last login timestamp.",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "localId": {
+                                "description": "The local ID of the user.",
+                                "type": "string"
+                            },
+                            "passwordHash": {
+                                "description": "The user's hashed password.",
+                                "format": "byte",
+                                "type": "string"
+                            },
+                            "passwordUpdatedAt": {
+                                "description": "The timestamp when the password was last updated.",
+                                "format": "double",
+                                "type": "number"
+                            },
+                            "phoneNumber": {
+                                "description": "User's phone number.",
+                                "type": "string"
+                            },
+                            "photoUrl": {
+                                "description": "The URL of the user profile photo.",
+                                "type": "string"
+                            },
+                            "providerUserInfo": {
+                                "description": "The IDP of the user.",
+                                "items": {
+                                    "properties": {
+                                        "displayName": {
+                                            "description": "The user's display name at the IDP.",
+                                            "type": "string"
+                                        },
+                                        "email": {
+                                            "description": "User's email at IDP.",
+                                            "type": "string"
+                                        },
+                                        "federatedId": {
+                                            "description": "User's identifier at IDP.",
+                                            "type": "string"
+                                        },
+                                        "phoneNumber": {
+                                            "description": "User's phone number.",
+                                            "type": "string"
+                                        },
+                                        "photoUrl": {
+                                            "description": "The user's photo url at the IDP.",
+                                            "type": "string"
+                                        },
+                                        "providerId": {
+                                            "description": "The IdP ID. For white listed IdPs it's a short domain name, e.g., google.com, aol.com, live.net and yahoo.com. For other OpenID IdPs it's the OP identifier.",
+                                            "type": "string"
+                                        },
+                                        "rawId": {
+                                            "description": "User's raw identifier directly returned from IDP.",
+                                            "type": "string"
+                                        },
+                                        "screenName": {
+                                            "description": "User's screen name at Twitter or login name at Github.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "rawPassword": {
+                                "description": "The user's plain text password.",
+                                "type": "string"
+                            },
+                            "salt": {
+                                "description": "The user's password salt.",
+                                "format": "byte",
+                                "type": "string"
+                            },
+                            "screenName": {
+                                "description": "User's screen name at Twitter or login name at Github.",
+                                "type": "string"
+                            },
+                            "validSince": {
+                                "description": "Timestamp in seconds for valid login token.",
+                                "format": "int64",
+                                "type": "string"
+                            },
+                            "version": {
+                                "description": "Version of the user's password.",
+                                "format": "int32",
+                                "type": "integer"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

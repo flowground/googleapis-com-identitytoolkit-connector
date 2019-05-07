@@ -1,0 +1,223 @@
+{
+    "type": "object",
+    "properties": {
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json"
+            ],
+            "default": "json"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Request to set the project configuration.",
+            "properties": {
+                "allowPasswordUser": {
+                    "description": "Whether to allow password user sign in or sign up.",
+                    "type": "boolean"
+                },
+                "apiKey": {
+                    "description": "Browser API key, needed when making http request to Apiary.",
+                    "type": "string"
+                },
+                "authorizedDomains": {
+                    "description": "Authorized domains for widget redirect.",
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "changeEmailTemplate": {
+                    "description": "Change email template.",
+                    "properties": {
+                        "body": {
+                            "description": "Email body.",
+                            "type": "string"
+                        },
+                        "format": {
+                            "description": "Email body format.",
+                            "type": "string"
+                        },
+                        "from": {
+                            "description": "From address of the email.",
+                            "type": "string"
+                        },
+                        "fromDisplayName": {
+                            "description": "From display name.",
+                            "type": "string"
+                        },
+                        "replyTo": {
+                            "description": "Reply-to address.",
+                            "type": "string"
+                        },
+                        "subject": {
+                            "description": "Subject of the email.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "delegatedProjectNumber": {
+                    "description": "GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "enableAnonymousUser": {
+                    "description": "Whether to enable anonymous user.",
+                    "type": "boolean"
+                },
+                "idpConfig": {
+                    "description": "Oauth2 provider configuration.",
+                    "items": {
+                        "description": "Template for a single idp configuration.",
+                        "properties": {
+                            "clientId": {
+                                "description": "OAuth2 client ID.",
+                                "type": "string"
+                            },
+                            "enabled": {
+                                "description": "Whether this IDP is enabled.",
+                                "type": "boolean"
+                            },
+                            "experimentPercent": {
+                                "description": "Percent of users who will be prompted/redirected federated login for this IDP.",
+                                "format": "int32",
+                                "type": "integer"
+                            },
+                            "provider": {
+                                "description": "OAuth2 provider.",
+                                "type": "string"
+                            },
+                            "secret": {
+                                "description": "OAuth2 client secret.",
+                                "type": "string"
+                            },
+                            "whitelistedAudiences": {
+                                "description": "Whitelisted client IDs for audience check.",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "legacyResetPasswordTemplate": {
+                    "description": "Legacy reset password email template.",
+                    "properties": {
+                        "body": {
+                            "description": "Email body.",
+                            "type": "string"
+                        },
+                        "format": {
+                            "description": "Email body format.",
+                            "type": "string"
+                        },
+                        "from": {
+                            "description": "From address of the email.",
+                            "type": "string"
+                        },
+                        "fromDisplayName": {
+                            "description": "From display name.",
+                            "type": "string"
+                        },
+                        "replyTo": {
+                            "description": "Reply-to address.",
+                            "type": "string"
+                        },
+                        "subject": {
+                            "description": "Subject of the email.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "resetPasswordTemplate": {
+                    "description": "Reset password email template.",
+                    "properties": {
+                        "body": {
+                            "description": "Email body.",
+                            "type": "string"
+                        },
+                        "format": {
+                            "description": "Email body format.",
+                            "type": "string"
+                        },
+                        "from": {
+                            "description": "From address of the email.",
+                            "type": "string"
+                        },
+                        "fromDisplayName": {
+                            "description": "From display name.",
+                            "type": "string"
+                        },
+                        "replyTo": {
+                            "description": "Reply-to address.",
+                            "type": "string"
+                        },
+                        "subject": {
+                            "description": "Subject of the email.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "useEmailSending": {
+                    "description": "Whether to use email sending provided by Firebear.",
+                    "type": "boolean"
+                },
+                "verifyEmailTemplate": {
+                    "description": "Verify email template.",
+                    "properties": {
+                        "body": {
+                            "description": "Email body.",
+                            "type": "string"
+                        },
+                        "format": {
+                            "description": "Email body format.",
+                            "type": "string"
+                        },
+                        "from": {
+                            "description": "From address of the email.",
+                            "type": "string"
+                        },
+                        "fromDisplayName": {
+                            "description": "From display name.",
+                            "type": "string"
+                        },
+                        "replyTo": {
+                            "description": "Reply-to address.",
+                            "type": "string"
+                        },
+                        "subject": {
+                            "description": "Subject of the email.",
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

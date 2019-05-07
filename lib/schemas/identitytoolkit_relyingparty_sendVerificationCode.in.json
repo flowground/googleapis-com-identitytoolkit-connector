@@ -1,0 +1,53 @@
+{
+    "type": "object",
+    "properties": {
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json"
+            ],
+            "default": "json"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Request for Identitytoolkit-SendVerificationCode",
+            "properties": {
+                "iosReceipt": {
+                    "description": "Receipt of successful app token validation with APNS.",
+                    "type": "string"
+                },
+                "iosSecret": {
+                    "description": "Secret delivered to iOS app via APNS.",
+                    "type": "string"
+                },
+                "phoneNumber": {
+                    "description": "The phone number to send the verification code to in E.164 format.",
+                    "type": "string"
+                },
+                "recaptchaToken": {
+                    "description": "Recaptcha solution.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

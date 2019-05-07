@@ -1,0 +1,94 @@
+{
+    "type": "object",
+    "properties": {
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json"
+            ],
+            "default": "json"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Request to signup new user, create anonymous user or anonymous user reauth.",
+            "properties": {
+                "captchaChallenge": {
+                    "description": "The captcha challenge.",
+                    "type": "string"
+                },
+                "captchaResponse": {
+                    "description": "Response to the captcha.",
+                    "type": "string"
+                },
+                "disabled": {
+                    "description": "Whether to disable the user. Only can be used by service account.",
+                    "type": "boolean"
+                },
+                "displayName": {
+                    "description": "The name of the user.",
+                    "type": "string"
+                },
+                "email": {
+                    "description": "The email of the user.",
+                    "type": "string"
+                },
+                "emailVerified": {
+                    "description": "Mark the email as verified or not. Only can be used by service account.",
+                    "type": "boolean"
+                },
+                "idToken": {
+                    "description": "The GITKit token of the authenticated user.",
+                    "type": "string"
+                },
+                "instanceId": {
+                    "description": "Instance id token of the app.",
+                    "type": "string"
+                },
+                "localId": {
+                    "description": "Privileged caller can create user with specified user id.",
+                    "type": "string"
+                },
+                "password": {
+                    "description": "The new password of the user.",
+                    "type": "string"
+                },
+                "phoneNumber": {
+                    "description": "Privileged caller can create user with specified phone number.",
+                    "type": "string"
+                },
+                "photoUrl": {
+                    "description": "The photo url of the user.",
+                    "type": "string"
+                },
+                "tenantId": {
+                    "description": "For multi-tenant use cases, in order to construct sign-in URL with the correct IDP parameters, Firebear needs to know which Tenant to retrieve IDP configs from.",
+                    "type": "string"
+                },
+                "tenantProjectNumber": {
+                    "description": "Tenant project number to be used for idp discovery.",
+                    "format": "uint64",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}

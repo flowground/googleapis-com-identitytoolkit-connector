@@ -1,0 +1,91 @@
+{
+    "type": "object",
+    "properties": {
+        "alt": {
+            "type": "string",
+            "enum": [
+                "json"
+            ],
+            "default": "json"
+        },
+        "fields": {
+            "type": "string"
+        },
+        "key": {
+            "type": "string"
+        },
+        "oauth_token": {
+            "type": "string"
+        },
+        "prettyPrint": {
+            "type": "boolean",
+            "default": true
+        },
+        "quotaUser": {
+            "type": "string"
+        },
+        "userIp": {
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Request to verify the IDP assertion.",
+            "properties": {
+                "autoCreate": {
+                    "description": "When it's true, automatically creates a new account if the user doesn't exist. When it's false, allows existing user to sign in normally and throws exception if the user doesn't exist.",
+                    "type": "boolean"
+                },
+                "delegatedProjectNumber": {
+                    "description": "GCP project number of the requesting delegated app. Currently only intended for Firebase V1 migration.",
+                    "format": "int64",
+                    "type": "string"
+                },
+                "idToken": {
+                    "description": "The GITKit token of the authenticated user.",
+                    "type": "string"
+                },
+                "instanceId": {
+                    "description": "Instance id token of the app.",
+                    "type": "string"
+                },
+                "pendingIdToken": {
+                    "description": "The GITKit token for the non-trusted IDP pending to be confirmed by the user.",
+                    "type": "string"
+                },
+                "postBody": {
+                    "description": "The post body if the request is a HTTP POST.",
+                    "type": "string"
+                },
+                "requestUri": {
+                    "description": "The URI to which the IDP redirects the user back. It may contain federated login result params added by the IDP.",
+                    "type": "string"
+                },
+                "returnIdpCredential": {
+                    "description": "Whether return 200 and IDP credential rather than throw exception when federated id is already linked.",
+                    "type": "boolean"
+                },
+                "returnRefreshToken": {
+                    "description": "Whether to return refresh tokens.",
+                    "type": "boolean"
+                },
+                "returnSecureToken": {
+                    "description": "Whether return sts id token and refresh token instead of gitkit token.",
+                    "type": "boolean"
+                },
+                "sessionId": {
+                    "description": "Session ID, which should match the one in previous createAuthUri request.",
+                    "type": "string"
+                },
+                "tenantId": {
+                    "description": "For multi-tenant use cases, in order to construct sign-in URL with the correct IDP parameters, Firebear needs to know which Tenant to retrieve IDP configs from.",
+                    "type": "string"
+                },
+                "tenantProjectNumber": {
+                    "description": "Tenant project number to be used for idp discovery.",
+                    "format": "uint64",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    }
+}
